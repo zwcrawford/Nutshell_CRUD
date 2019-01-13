@@ -54,6 +54,7 @@ const registrationForm = {
     registrationArticle.appendChild(registrationFormFrag)
   },
   handleAddNewUser (NewAcct) {
+    // Add an if and forEach in here to see if user already exists or not. Do something depending on their status.
     dataCollection.yayNewPal(NewAcct)
       let userInputEmail = document.querySelector("#email").value
       let userInputUsername = document.querySelector("#user").value
