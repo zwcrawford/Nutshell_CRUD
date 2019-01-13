@@ -12,13 +12,13 @@ const dataCollection = {
   },
   //***** TEST *****/
   // ADD USER
-  yayNewPal(newUser) {
+  yayNewPal(newAcct) {
     return fetch("http://localhost:8088/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(newUser)
+      body: JSON.stringify(newAcct)
     })
   },
   //********* NEWS TABLE *********//
@@ -48,7 +48,7 @@ const dataCollection = {
 }
   
   export default dataCollection
-  
+
   //***** TEST *****/
   // DELETE USER
   // dudeGoAway(id) {

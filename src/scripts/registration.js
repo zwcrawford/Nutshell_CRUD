@@ -32,8 +32,13 @@ const registrationForm = {
     newAcctBtn.textContent = "New Account"
     newAcctBtn.setAttribute("class", "new__acct")
 
-    newAcctBtn.addEventListener("click", this.handleAddNewUser)
+    let loginBtn = document.createElement("button")
+    loginBtn.textContent = "New Account"
+    loginBtn.setAttribute("class", "new__acct")
 
+    newAcctBtn.addEventListener("click", this.handleAddNewUser)
+    loginBtn.addEventListener("click", this.handleAddNewUser)
+    
     //Refer to div on index with id "regForm"
     // 2. Create an empty frag and build it up
     let registrationFormFrag = document.createDocumentFragment()
@@ -49,7 +54,7 @@ const registrationForm = {
     registrationArticle.appendChild(registrationFormFrag)
   },
   handleAddNewUser () {
-    
+    dataCollection.yayNewPal(NewAcct)
   }
 }
 export default registrationForm
