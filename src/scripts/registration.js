@@ -33,11 +33,13 @@ const registrationForm = {
     newAcctBtn.setAttribute("class", "new__acct")
 
     let loginBtn = document.createElement("button")
-    loginBtn.textContent = "New Account"
-    loginBtn.setAttribute("class", "new__acct")
+    loginBtn.textContent = "Login"
+    loginBtn.setAttribute("class", "log__in")
 
     newAcctBtn.addEventListener("click", this.handleAddNewUser)
-    loginBtn.addEventListener("click", this.handleAddNewUser)
+    
+    //*********** Maybe handleLoginReturnUser here? ***********/
+    //loginBtn.addEventListener("click", this.handleAddNewUser)
     
     //Refer to div on index with id "regForm"
     // 2. Create an empty frag and build it up
@@ -46,6 +48,7 @@ const registrationForm = {
     registrationFormFrag.appendChild(emailField)
     registrationFormFrag.appendChild(userField)
     registrationFormFrag.appendChild(newAcctBtn)
+    registrationFormFrag.appendChild(loginBtn)
 
     // 3. Target the div
     let registrationArticle = document.querySelector("#regForm")
@@ -58,7 +61,14 @@ const registrationForm = {
     dataCollection.yayNewPal(NewAcct)
       let userInputEmail = document.querySelector("#email").value
       let userInputUsername = document.querySelector("#user").value
+      let nodes = document.getElementById("display-container").childNodes;
 
+      // Hides display divs beneath the login section.
+      for(var i=0; i<nodes.length; i++) {
+          if (nodes[i].nodeName.toLowerCase() == "div") {
+              nodes[i].style.display = "none";
+          }
+      }
       let newUser = {
         username: userInputEmail,
         email: userInputUsername
